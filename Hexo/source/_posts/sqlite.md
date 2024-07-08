@@ -1,7 +1,8 @@
 ---
 title: SQLite 笔记
 categories: SQLite
-cover: https://www.sqlite.org/images/sqlite370_banner.gif
+cover: /pictures/cover_sql.jpg
+swiper_index: 1
 ---
 
 # SQLite 笔记
