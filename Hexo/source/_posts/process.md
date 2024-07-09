@@ -1,9 +1,14 @@
 ---
 title: Hexo博客网站搭建过程
-categories: 记录
+date: 2024-07-07 22:00:00
+categories:
+- 记录
 description: 这里将持续更新本站搭建全过程
 swiper_index: 2
 cover: /pictures/cover_1.jpg
+tags:
+- 教学
+- 网站搭建
 ---
 # 搭建记录
 这篇文章的内容为本站的搭建过程，省略一些修改图片路径等简易操作
@@ -621,4 +626,30 @@ aplayerInject:
 其余用法等不再赘述，详情见[Butterfly添加全局吸底Aplayer教程](https://butterfly.js.org/posts/507c070f/)或者参考[APlayer官网档案](https://aplayer.js.org/#/zh-Hans/)
 ### 附：再在这里贴一个魔改音乐播放器教程
 详情见[butterfly魔改aplayer音乐](https://blog.anheyu.com/posts/6c69.html)
-## 19.
+## 19.引入iconfont自定义图标
+参考[Iconfont Inject](https://akilar.top/posts/d2ebecef/)以及[修改动态样式](https://akilar.top/posts/615e2dec/#%E5%8A%A8%E6%80%81%E6%A0%87%E7%AD%BE-anima)
+## 20.渐变色版权美化
+参考[（二创）Copyright-beautify](https://akilar.top/posts/8322f8e6/)
+以后博客内容标头可以如下自定义
+```shell
+---
+title: XXX # 文章名称
+date: XXXX-XX-XX XX:XX:XX # 文章发布日期
+updated: XXXX-XX-XX XX:XX:XX # 文章更新日期
+copyright_author: XXX # 作者覆写
+copyright_url: XXX # 原文链接覆写（直接输入网址，不需要加其他符号）
+license: # 许可协议名称覆写(一般不用)
+license_url: # 许可协议链接覆写（一般不用）
+swiper_index: X # 滚动条优先级，数字越大越优先
+cover: XX # 封面（后跟路径）
+categories: XX # 设置分类
+tags: XX # 设置标签
+---
+```
+## 21.按照最后更新时间对博客排序
+修改_config.yml中index_generator下的order_by
+```diff
+- order_by: -date
++ order_by: -updated
+```
+## 22.

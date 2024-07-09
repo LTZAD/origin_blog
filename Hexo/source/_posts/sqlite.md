@@ -1,8 +1,14 @@
 ---
 title: SQLite 笔记
-categories: SQLite
+date: 2024-07-07 23:00:00
+categories:
+- SQLite
 cover: /pictures/cover_sql.jpg
+copyright_author: 找不到服务器
 swiper_index: 1
+tags:
+- 教学
+- SQLite
 ---
 
 # SQLite 笔记
