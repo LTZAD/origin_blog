@@ -5,7 +5,8 @@ categories:
 - SQLite
 cover: /pictures/cover_sql.jpg
 copyright_author: 找不到服务器
-swiper_index: 1
+description: 一些关于SQLite的笔记
+swiper_index: 3
 tags:
 - 教学
 - SQLite

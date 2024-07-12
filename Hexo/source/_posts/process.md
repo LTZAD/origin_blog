@@ -4,10 +4,10 @@ date: 2024-07-07 22:00:00
 categories:
 - 记录
 description: 这里将持续更新本站搭建全过程
-swiper_index: 2
+swiper_index: 4
 cover: /pictures/cover_1.jpg
 tags:
-- 教学
+- 教程
 - 网站搭建
 ---
 # 搭建记录
@@ -652,4 +652,25 @@ tags: XX # 设置标签
 - order_by: -date
 + order_by: -updated
 ```
-## 22.
+## 22.双栏布局首页卡片魔改
+参考[双栏布局首页卡片魔改教程](https://akilar.top/posts/d6b69c49/)
+## 23.补：在每篇文章中自定义背景
+在markdown文件中添加
+```html
+{% raw %}
+<style>
+#web_bg{
+  background: url(XXX)!important;
+  /* 这里的url填图片路径 */
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+</style>
+{% endraw %}
+```
+## 24.魔改关于页面
+参考[安知鱼|butterfly魔改关于页面](https://blog.anheyu.com/posts/e62b.html)
+## 25.给网站增加悬浮伸缩侧边栏
+参考[轻笑Chuckle|给网站增加悬浮伸缩侧边栏](https://www.qcqx.cn/article/fab5c3df.html)
+## 26.

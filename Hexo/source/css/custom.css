@@ -178,65 +178,6 @@
   }
 }
 
-/* 侧边栏个人信息卡片动态渐变色 */
-#aside-content > .card-widget.card-info {
-  background: linear-gradient(
-    -45deg,
-    #e8d8b9,
-    #eccec5,
-    #a3e9eb,
-    #bdbdf0,
-    #eec1ea
-  );
-  box-shadow: 0 0 5px rgb(66, 68, 68);
-  position: relative;
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 10s ease infinite;
-  -moz-animation: Gradient 10s ease infinite;
-  animation: Gradient 10s ease infinite !important;
-}
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-/* 黑夜模式适配 */
-[data-theme="dark"] #aside-content > .card-widget.card-info {
-  background: #191919ee;
-}
-/* 个人信息Follow me按钮 */
-#aside-content > .card-widget.card-info > #card-info-btn {
-  background-color: #3eb8be;
-  border-radius: 8px;
-}
 :root {
   --trans-light: rgba(255, 255, 255, 0.9);
   --trans-dark: rgba(25, 25, 25, 0.9);
@@ -329,4 +270,324 @@ svg.social_icon {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+/* 悬浮伸缩侧边栏 */
+.contact-info{
+  position: fixed;
+  top: 45%;
+  z-index: 200;
+  left: -51px;
+  transition: 0.4s;
+}
+.contact-info:hover{
+  left: 0px;
+}
+.contact-info .option{
+  cursor: pointer;
+  position: relative;
+}
+
+.contact-info .option i{
+  display: block;
+  width: 50px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  background: rgb(255, 255, 255);
+  color: #b9b9b9;
+  font-size: 20px;
+  transition: 0.4s;
+  border-radius: 0 10px 10px 0;
+}
+
+.contact-info .option:hover i{
+  color: #3498db;
+}
+.contact-info .text{
+  border-radius: 15px;
+  position: absolute;
+  height: 60px;
+  width: 200px;
+  background: rgba(255,255,255,.85);
+  top: 0;
+  z-index: -1;
+  left: -136px;
+  color: rgb(0, 0, 0);
+  line-height: 60px;
+  text-align: center;
+  transition: 0.4s;
+}
+.contact-info .aplayertext{
+  transition: none!important;
+}
+.aplayer{
+  position: absolute!important;
+}
+.aplayer.aplayer-fixed .aplayer-body{
+  left: -60px;
+  position: absolute!important;
+  width: 370px!important;
+  transition: none!important;
+  border-radius: 10px!important;
+}
+.aplayer.aplayer-fixed{
+  left: -300px;
+}
+.contact-info .option:hover .aplayer.aplayer-fixed .aplayer-body,.contact-info .option:hover .aplayer.aplayer-fixed{
+  left: 0px;
+}
+.contact-info .option:hover .text{
+  left: 60px;
+}
+.contact-info .blok{
+  position: absolute;
+  height: 60px;
+  width: 100px;
+  top: 0;
+  z-index: -1;
+  left: 0px;
+}
+.contact-info .option:hover .blok{
+  left: 0px;
+}
+.contact-info .option:hover .aplayertext{
+  left: 60px!important;
+  width: 370px!important;
+  background: transparent!important;
+}
+.aplayer.aplayer-fixed .aplayer-miniswitcher{
+  border-radius: 0 10px 10px 0!important;
+}
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{
+  transition: 0.28s!important;
+  border-radius: 10px!important;
+}
+.aplayer .aplayer-pic{
+  height: 60px!important;
+}
+.aplayer .aplayer-info{
+  height: 60px!important;
+}
+.aplayer.aplayer-narrow .aplayer-body{
+  height: 60px;
+}
+.aplayer .aplayer-list.aplayer-list-hide{
+  margin-bottom: 59px!important;
+}
+.aplayer.aplayer-fixed .aplayer-list{
+  margin-bottom: 62px!important;
+  max-height: 240px!important;
+}
+.aplayer.aplayer-fixed .aplayer-info{
+  transition: none!important;
+}
+.aplayer.aplayer-narrow .aplayer-body{
+  height: 60px!important;
+}
+.aplayer.aplayer-narrow .aplayer-body, .aplayer.aplayer-narrow .aplayer-pic{
+  border-radius:  10px 0 0 10px!important;
+}
+.aplayer.aplayer-fixed{
+  border-radius: 10px!important;
+}
+.aplayer .aplayer-pic{
+  border-radius:  0 0 0 10px!important;
+}
+.aplayer.aplayer-fixed .aplayer-list{
+  border-radius: 10px 10px 0 0!important;
+}
+[data-theme=dark]
+.contact-info .option i{
+  background: rgb(22, 22, 22);
+  color: #b9b9b9;
+}
+[data-theme=dark]
+.contact-info .text{
+  background: rgba(23, 23, 23, 0.85);
+  color: rgba(255, 255, 255, 0.92);
+}
+@media screen and (max-width:1300px){
+  .contact-info{
+      display: none!important;
+    }
+}
+.aplayer{
+  opacity: .93!important;
+}
+[data-theme=dark]
+.aplayer{
+  background: rgb(22, 22, 22)!important;
+  color: rgb(255, 255, 255);
+}
+[data-theme=dark]
+.aplayer.aplayer-fixed .aplayer-body{
+  background: rgb(22, 22, 22)!important;
+  color: rgb(255, 255, 255);
+}
+[data-theme=dark]
+.aplayer .aplayer-list ol li:hover{
+  background: #3b3b3b;
+}
+[data-theme=dark]
+.aplayer .aplayer-list ol li.aplayer-list-light{
+  background: #686868;
+}
+[data-theme=dark]
+.aplayer .aplayer-info .aplayer-controller .aplayer-time{
+  color: #d4d4d4;
+}
+[data-theme=dark]
+.aplayer .aplayer-list ol li .aplayer-list-index{
+  color: #d4d4d4;
+}
+[data-theme=dark]
+.aplayer .aplayer-list ol li .aplayer-list-author{
+  color: #d4d4d4;
+}
+[data-theme=dark]
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{
+  fill: #d4d4d4;
+}
+
+.contact-info .text .strip{
+  border-radius: 5px;
+  position: absolute;
+  height: 36px;
+  width: 5px;
+  background: rgba(20, 163, 230, 0.8);
+  top: 12px;
+  z-index: -1;
+  right: 4px;
+  transition: 0.4s;
+}
+.aplayertext .strip{
+  transition: none!important;
+}
+.contact-info .option:hover .aplayertext .strip{
+  background: transparent;
+}
+[data-theme=dark]
+.aplayer .aplayer-miniswitcher{
+  background: rgba(23, 23, 23, 0.85);
+}
+.aplayer .aplayer-miniswitcher .aplayer-icon:hover path{
+  fill: #3498db;
+}
+[data-theme=dark]
+.contact-info .option:hover i{
+  color: #3498db;
+}
+.contact-info .option .text .post-reward .tip-button__text{
+margin: 25px!important;
+}
+.post-reward .reward-button .reward-main .reward-all{
+border-radius: 12px!important;
+}
+.contact-info .option .text .post-reward .reward-button .reward-main .reward-all{
+z-index: 999!important;
+}
+[data-theme="dark"]
+.contact-info .option .text .post-reward .tip-button{
+border: solid 2px rgba(236, 233, 233, 0.8);
+background: #043749d0;
+}
+/* 信息卡片头像状态 */
+.card-info-avatar .author-status-box {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% - 28px);
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d0d7de;
+  border-radius: 2em;
+  background-color: #f8f8f8f8;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .card-info-avatar .author-status-box {
+  background-color: #222222f2;
+  border: 1px solid #5c6060;
+}
+
+.card-info-avatar .author-status-box .author-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 5px;
+}
+
+.card-info-avatar .author-status-box:hover {
+  width: 105px;
+}
+
+.card-info-avatar .author-status-box:hover .author-status span {
+  width: 105px;
+  margin-left: 4px;
+}
+
+.card-info-avatar .author-status-box .author-status span {
+  width: 0;
+  font-size: 12px;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: 0.4s;
+}
+
+.card-widget .card-info-avatar {
+  display: inline-block;
+  position: relative;
+}
+
+/* 个人信息卡片背景图 */
+[data-theme="light"] #aside-content > .card-widget.card-info {
+  background-image: url(/pictures/card_light.png);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background-image: url(/pictures/card_dark.png);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
+}
+
+/* 个人信息Follow me按钮 */
+#aside-content > .card-widget.card-info > #card-info-btn {
+  background-color: #3eb8be;
+  border-radius: 8px;
+}
+
+/* 头像呼吸灯 */
+[data-theme="light"] .avatar-img {
+  animation: huxi_light 4s ease-in-out infinite;
+}
+[data-theme="dark"] .avatar-img {
+  animation: huxi_dark 4s ease-in-out infinite;
+}
+@keyframes huxi_light {
+  0% {
+    box-shadow: 0px 0px 1px 1px #e9f5fa;
+  }
+  50% {
+    box-shadow: 0px 0px 5px 5px #e9f5fa;
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #e9f5fa;
+  }
+}
+@keyframes huxi_dark {
+  0% {
+    box-shadow: 0px 0px 1px 1px #39c5bb;
+  }
+  50% {
+    box-shadow: 0px 0px 5px 5px #39c5bb;
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #39c5bb;
+  }
 }
